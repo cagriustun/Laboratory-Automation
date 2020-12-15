@@ -1,0 +1,32 @@
+﻿@using CoreLaboratory2.Models
+@model List<Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Laboratory</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+            <td>@item.Laboratory.LaboratoryName</td>
+            <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Employee/UpdateEmployee/@item.EmployeeID" class="btn btn-success">Update</a></td>
+            <td><a href="/Employee/EmployeeDetail/@item.EmployeeID" class="btn btn-light" style="background-color:#ffd800;">Details</a></td>
+        </tr>
+    }
+</table>
+<a href="/Employee/NewEmployee/" class="btn btn-primary">New Employee</a>
+

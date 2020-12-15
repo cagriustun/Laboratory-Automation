@@ -1,0 +1,20 @@
+﻿@model CoreLaboratory2.Models.Laboratory
+@{
+    ViewData["Title"] = "UpdateLaboratory";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateLaboratory1", "Laboratory", FormMethod.Post))
+{
+    <b>Laboratory ID</b>
+    @Html.TextBoxFor(x => x.LaboratoryID, new { @class = "form-control" })
+    <br />
+    <b>Laboratory Name</b>
+    @Html.TextBoxFor(x => x.LaboratoryName, new { @class = "form-control" })
+    <br />
+    <b>Laboratory Type</b>
+    @Html.TextBoxFor(x => x.LaboratoryType, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update Laboratory</button>
+}
+

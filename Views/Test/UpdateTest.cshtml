@@ -1,0 +1,27 @@
+﻿@model CoreLaboratory2.Models.Test
+@{
+    ViewData["Title"] = "UpdateTest";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateTest1", "Test", FormMethod.Post))
+{
+    <b>Test ID</b>
+    @Html.TextBoxFor(x => x.TestID, new { @class = "form-control" })
+    <br />
+    <b>Test Name</b>
+    @Html.TextBoxFor(x => x.TestName, new { @class = "form-control" })
+    <br />
+    <b>Test Type</b>
+    @Html.TextBoxFor(x => x.TestTypes, new { @class = "form-control" })
+    <br />
+    <b>Test Description</b>
+    @Html.TextBoxFor(x => x.TestDescription, new { @class = "form-control" })
+    <br />
+    <b>Employee</b>
+    @Html.DropDownListFor(x => x.Employee.EmployeeID, (List<SelectListItem>)ViewBag.data, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update Employee</button>
+}
+
+

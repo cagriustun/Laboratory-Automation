@@ -1,0 +1,22 @@
+﻿@model CoreLaboratory2.Models.Employee
+@{
+    ViewData["Title"] = "NewEmployee";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<form class="form-group" method="post">
+    <b>Employee Name</b>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <b>Employee Surname</b>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <b>Employee Working Area</b>
+    @Html.TextBoxFor(x => x.EmployeeWorkingArea, new { @class = "form-control" })
+    <br />
+    <b>Laboratory</b>
+    @Html.DropDownListFor(x => x.Laboratory.LaboratoryID,(List<SelectListItem>)ViewBag.data,new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Add Employee</button>
+</form>
+

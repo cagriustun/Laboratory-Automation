@@ -1,0 +1,25 @@
+﻿@using CoreLaboratory2.Models
+@model List<Employee>
+@{
+    ViewData["Title"] = "LaboratoryDetail";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<h2>@ViewBag.labName Laboratory</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+        </tr>
+    }
+</table>
+

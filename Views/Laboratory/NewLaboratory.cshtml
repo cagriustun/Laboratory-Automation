@@ -1,0 +1,16 @@
+﻿@model CoreLaboratory2.Models.Laboratory
+@{
+    ViewData["Title"] = "NewLaboratory";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<form class="form-group" method="post">
+    <b>Laboratory Name</b>
+    @Html.TextBoxFor(x => x.LaboratoryName, new { @class = "form-control" })
+    <br />
+    <b>Laboratory Type</b>
+    @Html.TextBoxFor(x => x.LaboratoryType, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Add Laboratory</button>
+</form>
+
