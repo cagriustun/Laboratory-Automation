@@ -23,4 +23,15 @@
 
 ## 
 ## Laboratory Automation Project ScreenShots
-[laboratoryIndex](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/laboratoryIndex.png)
+### laboratoryIndex
+![laboratoryIndex](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/laboratoryIndex.png)
+### laboratoryCreate
+![laboratoryCreate](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/laboratoryCreate.png)
+### laboratoryDetails
+![laboratoryDetails](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/laboratoryDetails.png)
+### employeeIndex
+![employeeIndex](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/employeeIndex.png)
+### employeeUpdate
+![employeeUpdate](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/employeeUpdate.png)
+### testIndex
+![testIndex](https://raw.githubusercontent.com/cagriustun/Laboratory-Automation/main/LaboratoryAutomationScreenShots/testIndex.png)
