@@ -10,10 +10,10 @@ namespace CoreLaboratory2.Controllers
     public class LaboratoryController : Controller
     {
         Context c = new Context();
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
             var data = c.Laboratorys.ToList();
-            return View(data);
+            return View(c.Laboratorys.Where(x => x.LaboratoryName.StartsWith(search) || search==null).ToList());
         }
         [HttpGet]
         public IActionResult NewLaboratory()
@@ -44,6 +44,7 @@ namespace CoreLaboratory2.Controllers
         public IActionResult UpdateLaboratory(int id)
         {
             var lab = c.Laboratorys.Find(id);
+            
             return View("UpdateLaboratory", lab);
         }
         public IActionResult UpdateLaboratory1(Laboratory l)

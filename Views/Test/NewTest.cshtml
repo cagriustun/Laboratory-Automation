@@ -3,6 +3,8 @@
     ViewData["Title"] = "NewTest";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <br />
 <form class="form-group" method="post">
     <b>Test Name</b>
@@ -17,6 +19,10 @@
     <b>Employee</b>
     @Html.DropDownListFor(x => x.Employee.EmployeeID, (List<SelectListItem>)ViewBag.data, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Add Test</button>
+    <button class="btn btn-info" id="addBtn">Add Test</button>
 </form>
-
+<script>
+    $('#addBtn').click(function () {
+        alert("Laboratory was added.");
+    });
+</script>

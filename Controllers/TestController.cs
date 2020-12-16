@@ -12,10 +12,10 @@ namespace CoreLaboratory2.Controllers
     public class TestController : Controller
     {
         Context c = new Context();
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
             var data = c.Tests.Include(x => x.Employee).ToList();
-            return View(data);
+            return View(c.Tests.Include(x => x.Employee).Where(x => x.TestName.StartsWith(search) || search == null).ToList());
         }
         [HttpGet]
         public IActionResult NewTest()

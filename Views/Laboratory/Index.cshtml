@@ -4,7 +4,15 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <br />
+@using (Html.BeginForm("Index", "Laboratory", FormMethod.Get))
+{
+<p>
+    Search Laboratory Name @Html.TextBox("search")
+</p>
+}
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -14,17 +22,23 @@
         <th>Update</th>
         <th>Details</th>
     </tr>
+
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.LaboratoryID</td>
             <td>@item.LaboratoryName</td>
             <td>@item.LaboratoryType</td>
-            <td><a href="/Laboratory/DeleteLaboratory/@item.LaboratoryID" class="btn btn-danger">Delete</a>@Html.Raw(TempData["msg"])</td>
+            <td><a href="/Laboratory/DeleteLaboratory/@item.LaboratoryID" class="btn btn-danger">Delete</a></td>
             <td><a href="/Laboratory/UpdateLaboratory/@item.LaboratoryID" class="btn btn-success">Update</a></td>
             <td><a href="/Laboratory/LaboratoryDetail/@item.LaboratoryID" class="btn btn-light" style="background-color:#ffd800;">Details</a></td>
         </tr>
     }
 </table>
-<a href="/Laboratory/NewLaboratory/" class="btn btn-primary">New Laboratory</a>
 
+<a href="/Laboratory/NewLaboratory/" class="btn btn-primary">New Laboratory</a>
+<script>
+    $('.btn-danger').click(function () {
+        alert("Deletion Successful");
+    });
+</script>

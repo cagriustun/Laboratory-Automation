@@ -3,6 +3,8 @@
     ViewData["Title"] = "UpdateEmployee";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <br />
 @using (Html.BeginForm("UpdateEmployee1", "Employee", FormMethod.Post))
 {
@@ -21,6 +23,11 @@
     <b>Laboratory</b>
     @Html.DropDownListFor(x => x.Laboratory.LaboratoryID, (List<SelectListItem>)ViewBag.data, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Update Employee</button>
+    <button class="btn btn-info" id="updBtn">Update Employee</button>
 }
+<script>
+    $('#updBtn').click(function () {
+        alert("Update Successful");
+    });
+</script>
 

@@ -4,7 +4,15 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <br />
+@using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+{
+    <p>
+        Search Employee Name or Surname @Html.TextBox("search")
+    </p>
+}
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -29,4 +37,8 @@
     }
 </table>
 <a href="/Employee/NewEmployee/" class="btn btn-primary">New Employee</a>
-
+<script>
+    $('.btn-danger').click(function () {
+        alert("Deletion Successful");
+    });
+</script>

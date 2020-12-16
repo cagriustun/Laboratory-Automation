@@ -4,7 +4,15 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <br />
+@using (Html.BeginForm("Index", "Test", FormMethod.Get))
+{
+    <p>
+        Search Test Name @Html.TextBox("search")
+    </p>
+}
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -17,16 +25,20 @@
     </tr>
     @foreach (var item in Model)
     {
-<tr>
-    <td>@item.TestID</td>
-    <td>@item.TestName</td>
-    <td>@item.TestTypes</td>
-    <td>@item.TestDescription</td>
-    <td>@(item.Employee.EmployeeName + " " + item.Employee.EmployeeSurname) </td>
-    <td><a href="/Test/DeleteTest/@item.TestID" class="btn btn-danger">Delete</a></td>
-    <td><a href="/Test/UpdateTest/@item.TestID" class="btn btn-success">Update</a></td>
-</tr>
+        <tr>
+            <td>@item.TestID</td>
+            <td>@item.TestName</td>
+            <td>@item.TestTypes</td>
+            <td>@item.TestDescription</td>
+            <td>@(item.Employee.EmployeeName + " " + item.Employee.EmployeeSurname) </td>
+            <td><a href="/Test/DeleteTest/@item.TestID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Test/UpdateTest/@item.TestID" class="btn btn-success">Update</a></td>
+        </tr>
     }
 </table>
 <a href="/Test/NewTest/" class="btn btn-primary">New Test</a>
-
+<script>
+    $('.btn-danger').click(function () {
+        alert("Deletion Successful");
+    });
+</script>

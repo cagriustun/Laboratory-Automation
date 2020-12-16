@@ -12,10 +12,10 @@ namespace CoreLaboratory2.Controllers
     public class EmployeeController : Controller
     {
         Context c = new Context();
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
             var data = c.Employees.Include(x => x.Laboratory).ToList();
-            return View(data);
+            return View(c.Employees.Include(x => x.Laboratory).Where(x => x.EmployeeName.StartsWith(search) || x.EmployeeSurname.StartsWith(search) || search == null).ToList());
         }
         [HttpGet]
         public IActionResult NewEmployee()
